@@ -1,0 +1,73 @@
+
+
+    <span style="flex:auto;"></span>
+    <a routerLink="create">
+      <button mat-raised-button mat-button color="primary">
+      Ingresar pedido
+    </button>
+    </a>
+
+    <div class="not-found" *ngIf="dataSource.length < 1">
+    <mat-card>
+        <h1><mat-card-title>¡Vaya!</mat-card-title></h1>
+      <mat-card-content>
+    <p>Parece que no tienes pedidos realizados, realiza alguno</p>
+    </mat-card-content>
+    </mat-card>
+    </div>
+
+    <table *ngIf="dataSource.length > 0" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="No.">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Nombre </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="nit">
+        <th mat-header-cell *matHeaderCellDef> Nit </th>
+        <td mat-cell *matCellDef="let element"> {{element.nit}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element; let i = index" class="actions-b">
+            <a routerLink="{{element.id}}">
+            <button mat-raised-button mat-button color="accent">
+              Editar
+            </button>
+          </a>
+             <button mat-raised-button mat-button class="btn btn-primary"
+            mwlConfirmationPopover
+            [popoverTitle]="'¿Desea eliminar este pedido?'"
+            [popoverMessage]=""
+            (confirm)="deleteProvider(element.id,i)"
+            placement="left" color="warn">Eliminar</button>
+          </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></tr>
+      </table>

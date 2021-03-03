@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.not-found{
+    margin-top: 2rem;
+}
+
+.not-found mat-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.not-found h1{
+    margin: 0;
+}
+
+.mat-elevation-z8{
+    margin-top: 2rem;
+}
+
+.mat-header-cell {
+    padding: 8px 8px 8px 0;
+  }
+
+  .mat-table{
+      width: 100%;
+  }
+
+td .mat-button{
+    margin: .5rem .5rem .5rem 0;
+}

@@ -1,0 +1,48 @@
+<div>
+    <form [formGroup]="form" (ngSubmit)="register($event)">
+        <mat-card style="display: flex;align-items: center;flex-direction: column;">
+            <mat-card-header>
+                <mat-card-title>
+                    <h2>Register</h2>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>Nombre</mat-label>
+                            <input matInput type="text" formControlName="name">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>E-mail</mat-label>
+                            <input matInput type="email" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field>
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput type="password" formControlName="password">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div *ngIf="errors" class="row errors">
+                    <mat-error>{{ errors }}</mat-error>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button [disabled]="form.invalid" mat-raised-button color="primary" type="submit">
+                            Registrate
+                        </button>
+                        <a [routerLink]="['/auth/login']"><button mat-button color="primary">Logueo</button></a>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

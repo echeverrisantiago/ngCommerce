@@ -1,0 +1,50 @@
+<form [formGroup]="form" (ngSubmit)="crearProducto($event)">
+    <mat-card style="display: flex;align-items: center;flex-direction: column;">
+        <mat-card-header>
+            <mat-card-title>
+                <h2>Registrar proveedor</h2>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" formControlName="name">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>E-Mail</mat-label>
+                        <input matInput type="email" formControlName="email">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>NIT</mat-label>
+                        <input matInput type="text" formControlName="nit">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field>
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput type="text" formControlName="phone">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button [disabled]="form.invalid" mat-raised-button color="primary" type="submit">
+                        Registrar proveedor
+                    </button>
+                </div>
+            </div>
+    </mat-card-content>
+    </mat-card>
+</form>
