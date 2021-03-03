@@ -1,27 +1,19 @@
 # NgCommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
+Este proyecto se encuentra realizado con laravel 8 y angular 11. 
 
-## Development server
+# Módulos realizados
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Se desarrolló un crud de productos y proveedores utilizando `` HttpClient `` para realizar las peticiones y se cumplió con el requerimiento de utilizar JWT para la autentificación y proteger las rutas.
 
-## Code scaffolding
+# Faltante
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Debido al tiempo quedó pendiente el módulo de pedidos u ordenes. Estaba pensado realizar dicho módulo listando todas las ordenes y un campo para ordenar los pedidos por fecha, además realizar un combobox para listar los productos en el pedido al registrarlo, los demás datos del formulario y el delete de los pedidos.
 
-## Build
+# Ejecutar
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+El backend en laravel se encuentra en la carpeta `` api `` ejecutar `` php artisan serve `` dentro de la carpeta para ejecutarlo y `` php artisan migrate `` para realizar las migraciones correspondientes. Utilizar xampp u otra aplicación para activar el apache y mysql para el correcto funcionamiento de la aplicación. 
 
-## Running unit tests
+Correr Angular en la raíz en la terminal con `` ng serve `` o `` ng serve -o `` para abrirlo en el navegador.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Desarrollado por `` Santiago Echeverri ``
